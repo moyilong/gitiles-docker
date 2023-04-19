@@ -12,8 +12,9 @@ RUN apt install -y git build-essential wget curl apt-transport-https curl gnupg 
 RUN wget https://github.com/bazelbuild/bazelisk/releases/download/v1.16.0/bazelisk-linux-amd64 \
     -O /usr/bin/bazelisk && chmod a+x /usr/bin/bazelisk
 
+ARG GITILES_BARNCH=v1.1.0
 
-RUN git clone https://gerrit.googlesource.com/gitiles --depth 1 /src
+RUN git clone https://gerrit.googlesource.com/gitiles --depth 1 /src -b ${GITILES_BARNCH}
 WORKDIR /src
 RUN git submodule update -r --init
 
