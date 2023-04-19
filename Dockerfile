@@ -14,7 +14,7 @@ RUN wget https://github.com/bazelbuild/bazelisk/releases/download/v1.16.0/bazeli
 
 ARG GITILES_BARNCH=v1.1.0
 
-RUN git clone https://gerrit.googlesource.com/gitiles --depth 1 /src -b ${GITILES_BARNCH}
+RUN git clone https://gerrit.googlesource.com/gitiles /src -b ${GITILES_BARNCH}
 WORKDIR /src
 RUN git submodule update -r --init
 
