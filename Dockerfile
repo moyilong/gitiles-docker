@@ -6,7 +6,7 @@ RUN sed -i \
     /etc/apt/sources.list && \
     apt update
 
-RUN apt install -y git build-essential wget curl apt-transport-https curl gnupg zip openjdk-8-jdk
+RUN apt install -y git build-essential wget curl apt-transport-https curl gnupg zip openjdk-11-jdk
 
 # Bazelisk
 RUN wget https://github.com/bazelbuild/bazelisk/releases/download/v1.16.0/bazelisk-linux-amd64 \
@@ -25,7 +25,7 @@ RUN bazelisk build //:gitiles
 
 
 # runtime
-FROM jetty:9.4.51-jre8-alpine
+FROM jetty:10.0.14-jre17
 
 COPY --from=build /src/bazel-bin /app
 WORKDIR /app
