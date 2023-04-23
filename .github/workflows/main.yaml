@@ -27,4 +27,5 @@ jobs:
           file: ./Dockerfile
           push: true
           #tags: ccr.ccs.tencentyun.com/zephyruser/gitiles
-          tags: registry.cn-hangzhou.aliyuncs.com/zephyruse/gitiles
+          tags: registry.cn-hangzhou.aliyuncs.com/zephyruse/gitiles,ccr.ccs.tencentyun.com/zephyruser/gitiles
+            
