@@ -30,4 +30,4 @@ FROM jetty:9.4.51-jre8-alpine
 COPY --from=build /src/bazel-bin /app
 WORKDIR /app
 
-RUN java -jar ${JETTY_HOME}/start.jar --add-to-startd=http2 --approve-all-license
+#RUN java -jar ${JETTY_HOME}/start.jar --add-to-startd=http2 --approve-all-license
