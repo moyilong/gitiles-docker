@@ -18,8 +18,8 @@ jobs:
         uses: docker/login-action@v2
         with:
           registry: registry.cn-hangzhou.aliyuncs.com
-          username: ${{ ACR_PASSWORD }}
-          password: ${{ ACR_USERNAME }}
+          username: ${{ secrets.ACR_PASSWORD }}
+          password: ${{ secrets.ACR_USERNAME }}
       - name: Build 
         uses: docker/build-push-action@v4
         with:
